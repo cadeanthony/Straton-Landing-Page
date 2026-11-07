@@ -160,8 +160,12 @@ h3{font-weight:800;letter-spacing:-.03em;line-height:1.2}
 .hero-note{margin-top:28px;display:none}
 @media(max-width:1023px){.hero-grid{padding-top:22px}.hero .ticks{display:none}.hero .lead{margin-top:16px}.form-cap{margin-top:-8px}}
 @media(min-width:1024px){.hero-note{display:flex}}
-.hero-actions{display:none;margin-top:28px}
-@media(min-width:1024px){.hero-actions{display:flex}}
+.hero-actions{display:none;margin-top:28px;align-items:center;gap:22px}
+@media(min-width:1024px){.hero-actions{display:flex}.hero .form-cap{display:none}}
+.hero-actions .btn{flex:none;white-space:nowrap}
+.side-cap{display:flex;align-items:center;gap:8px;font-family:var(--handf);font-weight:700;font-size:24px;line-height:1;color:var(--caption);transform:rotate(-2deg);white-space:nowrap}
+.side-cap svg{width:52px;height:32px;flex:none;margin-top:6px}
+@media(max-width:1199px){.hero-actions{gap:14px}.side-cap{font-size:20px;gap:6px}.side-cap svg{width:40px;height:26px}}
 .btn-ghost{gap:8px;transition:border-color .15s,background-color .15s}
 .btn-ghost:hover{border-color:rgba(20,44,59,.3);background:#f7fbfe}
 #how-it-works{scroll-margin-top:16px}
@@ -599,6 +603,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="tick" viewBox="0 0 28 24"><path d="M3 13 C6 15,9 18,11 21 C15 13,20 7,26 3" fill="none" stroke="#2F84C9" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="arrow-right" viewBox="0 0 60 36"><path d="M4 28 C16 10,34 6,52 16" fill="none" stroke="#3A8BCB" stroke-width="2.6" stroke-linecap="round"/><path d="M41 9 L53 17 L43 26" fill="none" stroke="#3A8BCB" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="arrow-down" viewBox="0 0 40 52"><path d="M34 4 C18 6,10 18,14 44" fill="none" stroke="#3A8BCB" stroke-width="2.6" stroke-linecap="round"/><path d="M6 36 L14 46 L22 37" fill="none" stroke="#3A8BCB" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
     <filter id="tornBlur" x="-2%" y="-80%" width="104%" height="260%"><feGaussianBlur stdDeviation="2.6"/></filter>
@@ -623,7 +628,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
         <p class="kicker" id="kw-kicker">Full OnlyFans management · Private by default</p>
         <h1 id="kw-h1" style="--fit:9.15"><span class="l">The <span class="hand">Renowned<svg viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden="true"><path d="M3 7 C70 2,150 10,220 5 S290 6,297 4" fill="none" stroke="#A9DBFA" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span> USA</span><span class="l">OnlyFans Agency<span class="flag" aria-hidden="true">🇺🇸</span></span></h1>
         <p class="lead" id="kw-sub">Tired of answering DMs at 2am? Straton is the US OnlyFans agency that takes it all off your plate: marketing, 24/7 chatting and daily OnlyFans management. You create. We grow the page.</p>
-        <div class="hero-actions"><a class="btn btn-ghost" href="#how-it-works" data-cta="hero-how">See How It Works<svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        <div class="hero-actions"><a class="btn btn-ghost" href="#how-it-works" data-cta="hero-how">See How It Works<svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><p class="side-cap" aria-hidden="true"><span>apply here. takes 2 minutes</span><svg><use href="#arrow-right"/></svg></p></div>
       </div>
 
       <div>
