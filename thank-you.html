@@ -26,7 +26,7 @@
 <script>
 // Count the lead only when someone arrives here straight from a submitted form (not on refresh or a direct visit).
 (function(){var ok=false;try{ok=sessionStorage.getItem("straton_applied")==="1";sessionStorage.removeItem("straton_applied");}catch(e){}
-var LABEL='CONVERSION_LABEL_HERE';
+var LABEL='WwsxCNLG2LMdEJrEw7JD'; // same lead conversion action as stratonmanagement.com/thank-you, so both pages are measured the same way
 if(ok&&LABEL!=='CONVERSION_LABEL_HERE'){gtag('event','conversion',{send_to:'AW-18091139610/'+LABEL});}
 if(ok){dataLayer.push({event:'lead_thank_you'});}})();</script>
 <style>
