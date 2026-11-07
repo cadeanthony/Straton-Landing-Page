@@ -32,10 +32,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&amp;family=Inter:wght@400..800&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&amp;family=Inter:wght@400..800&amp;display=swap"></noscript>
 
-<!-- Google tag (replace AW-XXXXXXXXXX with your Ads conversion ID, or remove if GTM loads it) -->
+<!-- Google tag (Google Ads AW-18091139610) -->
 <!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-XXXXXXXXXX');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18091139610"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18091139610');</script>
 -->
 
 <style>
@@ -1177,7 +1177,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
       var finish = function(){
         markDone();
         card.scrollIntoView({block:"center",behavior:"smooth"});
-        if (window.gtag){ gtag("event","conversion",{send_to:"AW-XXXXXXXXXX/XXXXXXXXXXXXXXXX"}); }
+        try{ sessionStorage.setItem("straton_applied","1"); }catch(e){} // thank-you page fires the Google Ads conversion once
         window.dataLayer && dataLayer.push({event:"apply_submit", form_location: form.elements.form_location.value});
         if (FORM_ENDPOINT) setTimeout(function(){ location.href = THANK_YOU_URL; }, 700); // brief pause lets the conversion tags send
       };
