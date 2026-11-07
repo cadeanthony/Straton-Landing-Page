@@ -1045,6 +1045,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
 
   // 3) Two-step form — same logic for the top and bottom forms; typing in one copies into the other
   var FORM_ENDPOINT = "/api/apply"; // Vercel function: verifies CAPTCHA, then forwards to the Zapier → GHL workflow
+  var THANK_YOU_URL = "/thank-you";
   var TURNSTILE_SITE_KEY = "0x4AAAAAAF3CfoGdJfZ0943p"; // Cloudflare Turnstile site key (public)
   var submitted = false;
 
@@ -1178,6 +1179,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
         card.scrollIntoView({block:"center",behavior:"smooth"});
         if (window.gtag){ gtag("event","conversion",{send_to:"AW-XXXXXXXXXX/XXXXXXXXXXXXXXXX"}); }
         window.dataLayer && dataLayer.push({event:"apply_submit", form_location: form.elements.form_location.value});
+        if (FORM_ENDPOINT) setTimeout(function(){ location.href = THANK_YOU_URL; }, 700); // brief pause lets the conversion tags send
       };
       var errEl=form.querySelector(".submit-err");
       var fail=function(msg){ btn.disabled=false; btn.textContent="Submit Application"; errEl.textContent=msg; errEl.hidden=false; if(window.turnstile && card._tsId!=null){ try{ window.turnstile.reset(card._tsId); }catch(e){} } };
