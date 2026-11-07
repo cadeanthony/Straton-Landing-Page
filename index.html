@@ -190,6 +190,9 @@ fieldset{border:0}
 .agree input{width:20px;height:20px;margin-top:1px;flex:none;accent-color:var(--primary)}
 .agree a{font-weight:600;color:var(--eyebrow)}
 .form-card .btn-block{margin-top:24px}
+.ts-slot{display:flex;justify-content:center;margin-top:6px}
+.ts-slot:empty{display:none}
+.submit-err{margin-top:10px;text-align:center;font-size:13.5px;font-weight:600;color:var(--red)}
 .form-foot{margin-top:12px;text-align:center;font-size:13px;font-weight:600;color:var(--slate)}
 .form-foot .ff1,.form-foot .ff2{white-space:nowrap}
 @media(max-width:639px){.form-foot .ff-sep{display:none}.form-foot .ff2{display:block;margin-top:2px}}
@@ -673,14 +676,16 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
                   <label class="chip"><input type="radio" name="current_setup" value="Have a chatter or assistant">Have a chatter or assistant</label>
                   <label class="chip"><input type="radio" name="current_setup" value="Currently with an agency">Currently with an agency</label>
                 </div><p class="err">Please pick one.</p></fieldset>
+              <div class="ts-slot" aria-live="polite"></div>
             </div>
 
             <!-- Attribution: filled from the ad click URL -->
             <input type="hidden" name="gclid"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium">
             <input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content">
-            <input type="hidden" name="landing_page"><input type="hidden" name="est_monthly"><input type="hidden" name="form_location" value="top">
+            <input type="hidden" name="landing_page"><input type="hidden" name="est_monthly"><input type="hidden" name="started_at"><input type="hidden" name="form_location" value="top">
 
             <button class="btn btn-primary btn-block submit-btn" type="submit">Next</button>
+            <p class="submit-err" role="alert" hidden></p>
             <p class="form-foot"><span class="ff1">⏱️ 2 minutes · 🔒 Private application</span><span class="ff-sep"> · </span><span class="ff2">No contract, just a conversation</span></p>
           </form>
 
@@ -937,14 +942,16 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
                   <label class="chip"><input type="radio" name="current_setup" value="Have a chatter or assistant">Have a chatter or assistant</label>
                   <label class="chip"><input type="radio" name="current_setup" value="Currently with an agency">Currently with an agency</label>
                 </div><p class="err">Please pick one.</p></fieldset>
+              <div class="ts-slot" aria-live="polite"></div>
             </div>
 
             <!-- Attribution: filled from the ad click URL -->
             <input type="hidden" name="gclid"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium">
             <input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content">
-            <input type="hidden" name="landing_page"><input type="hidden" name="est_monthly"><input type="hidden" name="form_location" value="bottom">
+            <input type="hidden" name="landing_page"><input type="hidden" name="est_monthly"><input type="hidden" name="started_at"><input type="hidden" name="form_location" value="bottom">
 
             <button class="btn btn-primary btn-block submit-btn" type="submit">Next</button>
+            <p class="submit-err" role="alert" hidden></p>
             <p class="form-foot"><span class="ff1">⏱️ 2 minutes · 🔒 Private application</span><span class="ff-sep"> · </span><span class="ff2">No contract, just a conversation</span></p>
           </form>
 
@@ -1034,10 +1041,11 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
     try{ if(val) sessionStorage.setItem(k,val); else val = sessionStorage.getItem(k); }catch(e){}
     if (val) forms.forEach(function(x){ x.elements[k].value = val; });
   });
-  forms.forEach(function(x){ x.elements.landing_page.value = location.href; });
+  forms.forEach(function(x){ x.elements.landing_page.value = location.href; x.elements.started_at.value = Date.now(); });
 
   // 3) Two-step form — same logic for the top and bottom forms; typing in one copies into the other
-  var FORM_ENDPOINT = "https://hooks.zapier.com/hooks/catch/28379340/VD5f6bnNPc1g6Kpq/"; // Zapier: straton-ads-landing-applications-to-ghl → GHL
+  var FORM_ENDPOINT = "/api/apply"; // Vercel function: verifies CAPTCHA, then forwards to the Zapier → GHL workflow
+  var TURNSTILE_SITE_KEY = "0x4AAAAAAF3CfoGdJfZ0943p"; // Cloudflare Turnstile site key (public)
   var submitted = false;
 
   function validGroup(fg){
@@ -1094,6 +1102,37 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
       utm_term:v("utm_term"), utm_content:v("utm_content"), form_location:v("form_location"), landing_page:v("landing_page"), est_monthly:v("est_monthly") };
   }
 
+  // Cloudflare Turnstile CAPTCHA: loaded only when someone reaches step 2 (keeps the page fast)
+  var tsLoading=null;
+  function loadTurnstile(){
+    if (window.turnstile) return Promise.resolve(window.turnstile);
+    if (tsLoading) return tsLoading;
+    tsLoading = new Promise(function(resolve,reject){
+      var sc=document.createElement("script");
+      sc.src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"; sc.async=true; sc.defer=true;
+      sc.onload=function(){ resolve(window.turnstile); }; sc.onerror=function(){ tsLoading=null; reject(new Error("turnstile")); };
+      document.head.appendChild(sc);
+    });
+    return tsLoading;
+  }
+  function renderCaptcha(card){
+    if (card._tsId!==undefined) return;
+    card._tsId=null;
+    loadTurnstile().then(function(ts){
+      card._tsId = ts.render(card.querySelector(".ts-slot"), { sitekey: TURNSTILE_SITE_KEY, appearance: "interaction-only", theme: "light", action: "apply" });
+    }).catch(function(){ card._tsId=undefined; });
+  }
+  function captchaToken(card){
+    return new Promise(function(resolve){
+      var tries=0;
+      (function poll(){
+        var t = (window.turnstile && card._tsId!=null) ? window.turnstile.getResponse(card._tsId) : "";
+        if (t || tries++>40) return resolve(t||"");
+        setTimeout(poll,250);
+      })();
+    });
+  }
+
   function markDone(){
     submitted = true;
     cards.forEach(function(c){ c.classList.add("done"); });
@@ -1119,6 +1158,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
       step = n; card.classList.toggle("on2", n===2);
       stepTxt.textContent = n===1 ? "Step 1 of 2 · Contact" : "Step 2 of 2 · Your page";
       back.hidden = n===1; btn.textContent = n===1 ? "Next" : "Submit Application";
+      if (n===2) renderCaptcha(card);
       card.scrollIntoView({block:"start",behavior:"smooth"});
     }
     back.addEventListener("click", function(){ go(1); });
@@ -1139,11 +1179,21 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
         if (window.gtag){ gtag("event","conversion",{send_to:"AW-XXXXXXXXXX/XXXXXXXXXXXXXXXX"}); }
         window.dataLayer && dataLayer.push({event:"apply_submit", form_location: form.elements.form_location.value});
       };
+      var errEl=form.querySelector(".submit-err");
+      var fail=function(msg){ btn.disabled=false; btn.textContent="Submit Application"; errEl.textContent=msg; errEl.hidden=false; if(window.turnstile && card._tsId!=null){ try{ window.turnstile.reset(card._tsId); }catch(e){} } };
+      errEl.hidden=true;
       if (!FORM_ENDPOINT){ finish(); return; }
-      // Simple form-encoded POST (no CORS preflight); Zapier catches it like the homepage form.
-      fetch(FORM_ENDPOINT,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(buildLead(form)).toString()})
-        .then(function(){ finish(); })
-        .catch(function(){ btn.disabled=false; btn.textContent="Submit Application"; alert("Something went wrong. Please check your connection and try again."); });
+      renderCaptcha(card);
+      captchaToken(card).then(function(token){
+        if (!token) return fail("Please complete the quick security check above, then submit again.");
+        var payload=buildLead(form);
+        payload.started_at=form.elements.started_at.value; payload.company_website=form.elements.company_website.value; payload.turnstile_token=token;
+        return fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
+          .then(function(r){ return r.json().catch(function(){return {};}).then(function(j){ if(r.ok && j.ok) return finish();
+            if (j.error==="captcha") return fail("The security check didn't pass. Please try again.");
+            if (j.error==="too_many_requests") return fail("Too many attempts. Please wait a few minutes and try again.");
+            fail("Something went wrong. Please try again, or message us on Instagram."); }); });
+      }).catch(function(){ fail("Something went wrong. Please check your connection and try again."); });
     });
   }
   cards.forEach(function(c,i){ initCard(c, forms[i]); });
