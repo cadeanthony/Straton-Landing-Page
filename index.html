@@ -644,30 +644,35 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
                 <input class="inp" id="f-ig" name="instagram" placeholder="@username" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Instagram.</p></div>
               <fieldset class="fg"><legend>Best way to reach you <span class="req">*</span></legend>
                 <div class="chips">
-                  <label class="chip"><input type="radio" name="contact_method" value="Text (US)" required>Text (US)</label>
-                  <label class="chip"><input type="radio" name="contact_method" value="WhatsApp">WhatsApp</label>
+                  <label class="chip"><input type="radio" name="contact_method" value="Text Message (US Only)" required>Text (US)</label>
+                  <label class="chip"><input type="radio" name="contact_method" value="WhatsApp (Outside U.S.)">WhatsApp</label>
                   <label class="chip"><input type="radio" name="contact_method" value="Instagram DM">Instagram DM</label>
                   <label class="chip"><input type="radio" name="contact_method" value="Telegram">Telegram</label>
                 </div><p class="err">Please pick one.</p></fieldset>
+              <div class="fg tg-field" hidden><label class="f-label" for="f-tg">Telegram username<span class="req"> *</span></label>
+                <input class="inp" id="f-tg" name="telegram" placeholder="@username" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Telegram username.</p></div>
               <div class="fg"><label class="agree"><input type="checkbox" name="consent" required><span>I'm 18+ and agree to be contacted about my application and to the <a href="https://stratonmanagement.com/privacy">Privacy Policy</a>.</span></label><p class="err">Please confirm to continue.</p></div>
             </div>
 
             <!-- STEP 2 -->
             <div class="fields step2">
-              <fieldset class="fg"><legend>Where's your page today? <span class="req">*</span></legend>
+              <fieldset class="fg"><legend>Current monthly creator revenue <span class="req">*</span></legend>
                 <div class="chips">
-                  <label class="chip"><input type="radio" name="current_earnings" value="Not started yet" required>Not started yet</label>
-                  <label class="chip"><input type="radio" name="current_earnings" value="Under $1K/mo">Under $1K / mo</label>
-                  <label class="chip"><input type="radio" name="current_earnings" value="$1K-$10K/mo">$1K – $10K / mo</label>
-                  <label class="chip"><input type="radio" name="current_earnings" value="$10K+/mo">$10K+ / mo</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$0" required>$0</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$2.5k - $5k/month">$2.5k - $5k/month</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$5k - $10k/month">$5k - $10k/month</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$10k - $25k/month">$10k - $25k/month</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$25K–$50K/month">$25K–$50K/month</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$50K–$100K/month">$50K–$100K/month</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$100K+/month">$100K+/month</label>
                 </div><p class="err">Please pick one.</p></fieldset>
-              <fieldset class="fg"><legend>What do you want help with?</legend>
+              <fieldset class="fg"><legend>What best describes your current setup? <span class="req">*</span></legend>
                 <div class="chips">
-                  <label class="chip"><input type="checkbox" name="help_with" value="Marketing">Marketing</label>
-                  <label class="chip"><input type="checkbox" name="help_with" value="Chatting">24/7 chatting</label>
-                  <label class="chip"><input type="checkbox" name="help_with" value="Account management">Account management</label>
-                  <label class="chip"><input type="checkbox" name="help_with" value="Everything">All of it</label>
-                </div></fieldset>
+                  <label class="chip"><input type="radio" name="current_setup" value="Just starting out" required>Just starting out</label>
+                  <label class="chip"><input type="radio" name="current_setup" value="Doing it all myself">Doing it all myself</label>
+                  <label class="chip"><input type="radio" name="current_setup" value="Have a chatter or assistant">Have a chatter or assistant</label>
+                  <label class="chip"><input type="radio" name="current_setup" value="Currently with an agency">Currently with an agency</label>
+                </div><p class="err">Please pick one.</p></fieldset>
             </div>
 
             <!-- Attribution: filled from the ad click URL -->
@@ -903,30 +908,35 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
                 <input class="inp" id="f-ig-b" name="instagram" placeholder="@username" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Instagram.</p></div>
               <fieldset class="fg"><legend>Best way to reach you <span class="req">*</span></legend>
                 <div class="chips">
-                  <label class="chip"><input type="radio" name="contact_method" value="Text (US)" required>Text (US)</label>
-                  <label class="chip"><input type="radio" name="contact_method" value="WhatsApp">WhatsApp</label>
+                  <label class="chip"><input type="radio" name="contact_method" value="Text Message (US Only)" required>Text (US)</label>
+                  <label class="chip"><input type="radio" name="contact_method" value="WhatsApp (Outside U.S.)">WhatsApp</label>
                   <label class="chip"><input type="radio" name="contact_method" value="Instagram DM">Instagram DM</label>
                   <label class="chip"><input type="radio" name="contact_method" value="Telegram">Telegram</label>
                 </div><p class="err">Please pick one.</p></fieldset>
+              <div class="fg tg-field" hidden><label class="f-label" for="f-tg-b">Telegram username<span class="req"> *</span></label>
+                <input class="inp" id="f-tg-b" name="telegram" placeholder="@username" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Telegram username.</p></div>
               <div class="fg"><label class="agree"><input type="checkbox" name="consent" required><span>I'm 18+ and agree to be contacted about my application and to the <a href="https://stratonmanagement.com/privacy">Privacy Policy</a>.</span></label><p class="err">Please confirm to continue.</p></div>
             </div>
 
             <!-- STEP 2 -->
             <div class="fields step2">
-              <fieldset class="fg"><legend>Where's your page today? <span class="req">*</span></legend>
+              <fieldset class="fg"><legend>Current monthly creator revenue <span class="req">*</span></legend>
                 <div class="chips">
-                  <label class="chip"><input type="radio" name="current_earnings" value="Not started yet" required>Not started yet</label>
-                  <label class="chip"><input type="radio" name="current_earnings" value="Under $1K/mo">Under $1K / mo</label>
-                  <label class="chip"><input type="radio" name="current_earnings" value="$1K-$10K/mo">$1K – $10K / mo</label>
-                  <label class="chip"><input type="radio" name="current_earnings" value="$10K+/mo">$10K+ / mo</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$0" required>$0</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$2.5k - $5k/month">$2.5k - $5k/month</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$5k - $10k/month">$5k - $10k/month</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$10k - $25k/month">$10k - $25k/month</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$25K–$50K/month">$25K–$50K/month</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$50K–$100K/month">$50K–$100K/month</label>
+                  <label class="chip"><input type="radio" name="monthly_revenue" value="$100K+/month">$100K+/month</label>
                 </div><p class="err">Please pick one.</p></fieldset>
-              <fieldset class="fg"><legend>What do you want help with?</legend>
+              <fieldset class="fg"><legend>What best describes your current setup? <span class="req">*</span></legend>
                 <div class="chips">
-                  <label class="chip"><input type="checkbox" name="help_with" value="Marketing">Marketing</label>
-                  <label class="chip"><input type="checkbox" name="help_with" value="Chatting">24/7 chatting</label>
-                  <label class="chip"><input type="checkbox" name="help_with" value="Account management">Account management</label>
-                  <label class="chip"><input type="checkbox" name="help_with" value="Everything">All of it</label>
-                </div></fieldset>
+                  <label class="chip"><input type="radio" name="current_setup" value="Just starting out" required>Just starting out</label>
+                  <label class="chip"><input type="radio" name="current_setup" value="Doing it all myself">Doing it all myself</label>
+                  <label class="chip"><input type="radio" name="current_setup" value="Have a chatter or assistant">Have a chatter or assistant</label>
+                  <label class="chip"><input type="radio" name="current_setup" value="Currently with an agency">Currently with an agency</label>
+                </div><p class="err">Please pick one.</p></fieldset>
             </div>
 
             <!-- Attribution: filled from the ad click URL -->
@@ -1027,7 +1037,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
   forms.forEach(function(x){ x.elements.landing_page.value = location.href; });
 
   // 3) Two-step form — same logic for the top and bottom forms; typing in one copies into the other
-  var FORM_ENDPOINT = ""; // set to your backend / CRM webhook, e.g. "/api/apply"
+  var FORM_ENDPOINT = "https://hooks.zapier.com/hooks/catch/28379340/VD5f6bnNPc1g6Kpq/"; // Zapier: straton-ads-landing-applications-to-ghl → GHL
   var submitted = false;
 
   function validGroup(fg){
@@ -1055,6 +1065,35 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
     });
   }
 
+  function updateTelegram(){
+    cards.forEach(function(c){
+      var sel=c.querySelector('input[name="contact_method"]:checked'), box=c.querySelector(".tg-field");
+      if (box){ box.hidden = !(sel && sel.value==="Telegram"); if (box.hidden) box.classList.remove("invalid"); }
+    });
+  }
+
+  // Same fields the stratonmanagement.com form sends to the "Creator Applications to GHL" Zap
+  function buildLead(form){
+    var f=form.elements, v=function(n){ var el=f[n]; if(!el) return ""; if(el.length!==undefined && el.tagName!=="SELECT"){ var c=[].find.call(el,function(x){return x.checked}); return c?c.value:""; } return (el.value||"").trim(); };
+    var full=v("name"), parts=full.split(/\s+/), first=parts.shift()||"", last=parts.join(" ");
+    var cc=(v("country_code").split(" ")[0]||"+1"), digits=v("phone").replace(/[^\d]/g,"");
+    if (cc==="+1" && digits.length===11 && digits.charAt(0)==="1") digits=digits.slice(1); // 1-555… typed with country code
+    if (cc!=="+1") digits=digits.replace(/^0+/,""); // drop national trunk 0 (UK, AU, DE…)
+    var ag=(new URLSearchParams(location.search).get("ag")||"agency").toLowerCase().replace(/[^a-z0-9-]/g,"");
+    var notes=["Applied via Google Ads landing page (agency.stratonmanagement.com)",
+      "Ad group: "+ag, "Form: "+v("form_location"),
+      v("est_monthly") ? "Calculator: "+v("est_monthly") : "",
+      v("gclid") ? "gclid: "+v("gclid") : "",
+      ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"].map(function(k){return v(k)?k+": "+v(k):""}).filter(Boolean).join(" · "),
+      "Page: "+v("landing_page")].filter(Boolean).join("\n");
+    return { first_name:first, last_name:last, full_name:full, phone:cc+digits, email:v("email"),
+      instagram:v("instagram"), telegram:v("telegram"), preferred_contact:v("contact_method"),
+      monthly_revenue:v("monthly_revenue"), current_setup:v("current_setup"), stage_name:"", anything_else:"",
+      tag:"google-ads-landing, ag-"+ag, notes:notes,
+      gclid:v("gclid"), utm_source:v("utm_source"), utm_medium:v("utm_medium"), utm_campaign:v("utm_campaign"),
+      utm_term:v("utm_term"), utm_content:v("utm_content"), form_location:v("form_location"), landing_page:v("landing_page"), est_monthly:v("est_monthly") };
+  }
+
   function markDone(){
     submitted = true;
     cards.forEach(function(c){ c.classList.add("done"); });
@@ -1064,7 +1103,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
     var btn = card.querySelector(".submit-btn"), stepTxt = card.querySelector(".step-txt"),
         back = card.querySelector(".back-btn"), step = 1;
     function validStep(n){
-      var groups = card.querySelectorAll(".step"+n+" .fg"), ok = true, first = null;
+      var groups = [].filter.call(card.querySelectorAll(".step"+n+" .fg"), function(g){ return !g.hidden; }), ok = true, first = null;
       groups.forEach(function(g){ if(!validGroup(g)){ ok=false; if(!first) first=g; } });
       if (first){ var el = first.querySelector("input:not([type=hidden]),select"); el && el.focus({preventScroll:true}); first.scrollIntoView({block:"center",behavior:"smooth"}); }
       return ok;
@@ -1072,6 +1111,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
     function onEdit(e){
       var g=e.target.closest(".fg"); if(g&&g.classList.contains("invalid")) validGroup(g);
       syncFrom(form, e.target);
+      if (e.target.name==="contact_method") updateTelegram();
     }
     card.addEventListener("input", onEdit);
     card.addEventListener("change", onEdit);
@@ -1100,9 +1140,10 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
         window.dataLayer && dataLayer.push({event:"apply_submit", form_location: form.elements.form_location.value});
       };
       if (!FORM_ENDPOINT){ finish(); return; }
-      fetch(FORM_ENDPOINT,{method:"POST",body:new FormData(form)})
-        .then(function(r){ if(!r.ok) throw 0; finish(); })
-        .catch(function(){ btn.disabled=false; btn.textContent="Submit Application"; alert("Something went wrong. Please try again."); });
+      // Simple form-encoded POST (no CORS preflight); Zapier catches it like the homepage form.
+      fetch(FORM_ENDPOINT,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(buildLead(form)).toString()})
+        .then(function(){ finish(); })
+        .catch(function(){ btn.disabled=false; btn.textContent="Submit Application"; alert("Something went wrong. Please check your connection and try again."); });
     });
   }
   cards.forEach(function(c,i){ initCard(c, forms[i]); });
