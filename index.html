@@ -220,8 +220,8 @@ fieldset{border:0}
 .split{display:grid;gap:56px;align-items:center}
 @media(min-width:1024px){.split{grid-template-columns:.95fr 1.05fr;gap:64px}}
 .privacy h2{margin-top:16px}
-.privacy-sub{margin-top:18px;max-width:30rem;font-size:16px;line-height:1.6;color:var(--slate)}
-@media(min-width:640px){.privacy-sub{font-size:17px}}
+.privacy-sub{margin-top:14px;max-width:28rem;font-size:14px;line-height:1.6;color:var(--slate)}
+@media(min-width:640px){.privacy-sub{font-size:15px}}
 .privacy-sub+.ticks{margin-top:22px}
 .privacy .btn{margin-top:28px}
 .folder{position:relative;max-width:440px;width:100%;margin:0 auto;transform:rotate(1.5deg);padding-top:24px}
@@ -249,7 +249,6 @@ fieldset{border:0}
 .pill{display:inline-flex;align-items:center;border-radius:999px;border:1px solid var(--input-line);background:var(--mist);padding:6px 14px;font-weight:700;font-variant-numeric:tabular-nums}
 .calc input[type=range]{width:100%;height:28px;margin-top:18px;cursor:pointer;accent-color:var(--primary)}
 .scale{display:flex;justify-content:space-between;margin-top:4px;font-size:12px;color:var(--slate)}
-.calc-hint{margin-top:14px;font-size:14px;color:var(--slate)}
 .period{margin-top:20px;padding-top:18px;border-top:1px solid var(--card-line)}
 .period-l{display:block;font-size:14px;font-weight:600;margin-bottom:10px}
 .seg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border-radius:999px;border:1px solid var(--input-line);background:var(--mist)}
@@ -258,7 +257,7 @@ fieldset{border:0}
 .seg button:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 .r-also{margin:-8px 0 16px;text-align:center;font-family:var(--handf);font-size:22px;font-weight:700;color:var(--caption);transform:rotate(-1.5deg)}
 .receipt{position:relative;width:100%;max-width:400px;margin:0 auto;background:#fff;padding:28px 22px 24px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:13.5px;box-shadow:0 14px 30px rgba(27,42,58,.14);transform:rotate(1.2deg)}
-.receipt .tape{left:auto;right:18px;transform:rotate(6deg)}
+.receipt .tape{left:50%;right:auto;transform:translateX(-50%) rotate(-2deg)}
 .r-h{text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 .r-big{margin:6px 0 14px;text-align:center;font-family:var(--sans);font-size:52px;font-weight:800;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
 .receipt dl{border-top:1px dashed #c9d3dc}
@@ -284,9 +283,6 @@ fieldset{border:0}
 .pola figcaption{position:absolute;left:12px;right:12px;bottom:8px;font-family:var(--handf);font-size:22px;font-weight:700;line-height:1;color:var(--ink)}
 @media(min-width:640px){.pola figcaption{font-size:24px}}
 .tape{position:absolute;top:-12px;left:50%;height:26px;width:90px;transform:translateX(-50%) rotate(-3deg);background-color:var(--tape);background-image:linear-gradient(90deg,rgba(255,255,255,.28),rgba(255,255,255,0) 9%,rgba(255,255,255,0) 91%,rgba(255,255,255,.28)),var(--noise);background-size:100% 100%,140px 44px}
-.stamp-blue{position:absolute;right:-8px;bottom:28px;z-index:2;display:grid;place-items:center;width:120px;height:120px;border-radius:50%;border:3px solid var(--caption);color:var(--caption);font-size:11px;font-weight:800;line-height:1.3;letter-spacing:.12em;opacity:.9;transform:rotate(-12deg) scale(.8);mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(circle at 30% 40%,#000 55%,rgba(0,0,0,.55) 70%,#000 85%);mask-image:radial-gradient(circle at 30% 40%,#000 55%,rgba(0,0,0,.55) 70%,#000 85%)}
-.stamp-blue::before{content:"";position:absolute;inset:8px;border-radius:50%;border:1.5px dashed var(--caption)}
-.stamp-blue b{display:block;font-size:20px;letter-spacing:.02em}
 .swipe{font-family:var(--handf);font-size:22px;font-weight:700;color:var(--caption);margin-top:4px}
 @media(min-width:1024px){.swipe{display:none}}
 .note-sm{margin-top:20px;font-size:13px;color:var(--slate)}
@@ -625,7 +621,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
       <div>
         <p class="kicker" id="kw-kicker">Full OnlyFans management · Private by default</p>
         <h1 id="kw-h1" style="--fit:9.15"><span class="l">The <span class="hand">Renowned<svg viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden="true"><path d="M3 7 C70 2,150 10,220 5 S290 6,297 4" fill="none" stroke="#A9DBFA" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span> USA</span><span class="l">OnlyFans Agency<span class="flag" aria-hidden="true">🇺🇸</span></span></h1>
-        <p class="lead" id="kw-sub">Tired of answering DMs at 2am and guessing what to post? Straton is the US OnlyFans agency that takes the whole job off your plate: marketing, 24/7 chatting by real people, PPV pricing and daily OnlyFans management. You create. We grow the page. Your name stays private, and every decision stays yours.</p>
+        <p class="lead" id="kw-sub">Straton is the US OnlyFans agency that runs your page for you: marketing, 24/7 chatting by real people and daily OnlyFans management. You create. Your name stays private.</p>
         <div class="hero-actions"><a class="btn btn-ghost" href="#how-it-works" data-cta="hero-how">See How It Works<svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
       </div>
 
@@ -754,9 +750,8 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
     <div class="calc-grid">
       <div class="calc-card">
         <div class="calc-top"><label for="fans">Fans on your page</label><output class="pill" id="fansOut" for="fans">500</output></div>
-        <input type="range" id="fans" min="0" max="100" step="1" value="54" aria-describedby="fansHint">
+        <input type="range" id="fans" min="0" max="100" step="1" value="54">
         <div class="scale" aria-hidden="true"><span>100</span><span>2K</span></div>
-        <p class="calc-hint" id="fansHint">Haven't started yet? Slide to where you want to be.</p>
         <div class="period">
           <span class="period-l" id="periodL">Show what you keep per</span>
           <div class="seg" role="radiogroup" aria-labelledby="periodL">
@@ -792,29 +787,23 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
 <section class="mist results">
   <div class="wrap">
     <p class="cap"><svg aria-hidden="true"><use href="#arrow-down"/></svg><span>and it's real. straight from creator dashboards</span></p>
-    <span class="tag tag-yellow">Success stories</span>
     <h2>Renowned for Results. <span class="hl">Real Numbers.<svg viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true"><path d="M4 26 C60 12,140 30,200 18 S290 22,296 14 L296 34 C230 38,150 30,90 36 S20 38,4 36Z" fill="#FFD84D" opacity="0.9"/></svg></span></h2>
     <div class="polas">
       <div class="pola-wrap"><figure class="pola" style="--r:2deg"><span class="tape" aria-hidden="true"></span>
         <img src="https://framerusercontent.com/images/TpsPYpnLqhkIDDNiXU5rVXuW1U.webp?scale-down-to=512" srcset="https://framerusercontent.com/images/TpsPYpnLqhkIDDNiXU5rVXuW1U.webp?scale-down-to=512 512w, https://framerusercontent.com/images/TpsPYpnLqhkIDDNiXU5rVXuW1U.webp?scale-down-to=1024 1024w" sizes="(min-width:1024px) 300px, 72vw" alt="March 2026 earnings chart showing $73,439.26" width="1206" height="1099" style="aspect-ratio:1206/1099" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('noimg')"><div class="pola-fb" aria-hidden="true"><span class="fb-l">March 2026 · net earnings</span><b class="fb-a">$73,439.26</b><div class="fb-bars"><i style="height:42%"></i><i style="height:60%"></i><i style="height:48%"></i><i style="height:100%"></i><i style="height:66%"></i><i style="height:58%"></i><i style="height:52%"></i><i style="height:70%"></i><i style="height:61%"></i><i style="height:45%"></i></div></div>
-        <figcaption>$73,439.26 in March</figcaption></figure>
-        <span class="stamp-blue" aria-hidden="true"><span>REAL<b>STRATON</b>DASHBOARD</span></span></div>
+        <figcaption>$73,439.26 in March</figcaption></figure></div>
       <div class="pola-wrap"><figure class="pola" style="--r:-3deg"><span class="tape" aria-hidden="true"></span>
         <img src="https://stratonmanagement.com/_next/image?url=%2Fimages%2Fresult-june.webp&amp;w=640&amp;q=75" srcset="https://stratonmanagement.com/_next/image?url=%2Fimages%2Fresult-june.webp&amp;w=384&amp;q=75 384w, https://stratonmanagement.com/_next/image?url=%2Fimages%2Fresult-june.webp&amp;w=640&amp;q=75 640w, https://stratonmanagement.com/_next/image?url=%2Fimages%2Fresult-june.webp&amp;w=828&amp;q=75 828w" sizes="(min-width:1024px) 300px, 72vw" alt="June 2026 earnings chart showing $46,948.33" width="1206" height="1029" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('noimg')"><div class="pola-fb" aria-hidden="true"><span class="fb-l">June 2026 · net earnings</span><b class="fb-a">$46,948.33</b><div class="fb-bars"><i style="height:38%"></i><i style="height:52%"></i><i style="height:47%"></i><i style="height:66%"></i><i style="height:58%"></i><i style="height:79%"></i><i style="height:72%"></i><i style="height:86%"></i><i style="height:92%"></i><i style="height:100%"></i></div></div>
-        <figcaption>$46,948.33 in June</figcaption></figure>
-        <span class="stamp-blue" aria-hidden="true"><span>REAL<b>STRATON</b>DASHBOARD</span></span></div>
+        <figcaption>$46,948.33 in June</figcaption></figure></div>
       <div class="pola-wrap"><figure class="pola" style="--r:-4deg"><span class="tape" aria-hidden="true"></span>
         <img src="https://stratonmanagement.com/_next/image?url=%2Fimages%2Fresult-july-a.webp&amp;w=640&amp;q=75" srcset="https://stratonmanagement.com/_next/image?url=%2Fimages%2Fresult-july-a.webp&amp;w=384&amp;q=75 384w, https://stratonmanagement.com/_next/image?url=%2Fimages%2Fresult-july-a.webp&amp;w=640&amp;q=75 640w, https://stratonmanagement.com/_next/image?url=%2Fimages%2Fresult-july-a.webp&amp;w=828&amp;q=75 828w" sizes="(min-width:1024px) 300px, 72vw" alt="July 2026 earnings chart showing $45,866.84" width="1206" height="1029" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('noimg')"><div class="pola-fb" aria-hidden="true"><span class="fb-l">July 2026 · net earnings</span><b class="fb-a">$45,866.84</b><div class="fb-bars"><i style="height:44%"></i><i style="height:40%"></i><i style="height:61%"></i><i style="height:55%"></i><i style="height:74%"></i><i style="height:69%"></i><i style="height:88%"></i><i style="height:96%"></i><i style="height:82%"></i><i style="height:100%"></i></div></div>
-        <figcaption>$45,866.84 in July</figcaption></figure>
-        <span class="stamp-blue" aria-hidden="true"><span>REAL<b>STRATON</b>DASHBOARD</span></span></div>
+        <figcaption>$45,866.84 in July</figcaption></figure></div>
       <div class="pola-wrap"><figure class="pola" style="--r:3deg"><span class="tape" aria-hidden="true"></span>
         <img src="https://framerusercontent.com/images/i5qiGSs5aVar99A74yBwfS5dXI.webp?scale-down-to=512" srcset="https://framerusercontent.com/images/i5qiGSs5aVar99A74yBwfS5dXI.webp?scale-down-to=512 512w, https://framerusercontent.com/images/i5qiGSs5aVar99A74yBwfS5dXI.webp?scale-down-to=1024 1024w" sizes="(min-width:1024px) 300px, 72vw" alt="Mar 1–7 2026 earnings chart showing $19,504.14" width="1206" height="1032" style="aspect-ratio:1206/1032" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('noimg')"><div class="pola-fb" aria-hidden="true"><span class="fb-l">Mar 1–7, 2026 · net earnings</span><b class="fb-a">$19,504.14</b><div class="fb-bars"><i style="height:40%"></i><i style="height:48%"></i><i style="height:58%"></i><i style="height:70%"></i><i style="height:72%"></i><i style="height:68%"></i><i style="height:84%"></i><i style="height:88%"></i><i style="height:90%"></i><i style="height:92%"></i></div></div>
-        <figcaption>$19,504.14 in one week</figcaption></figure>
-        <span class="stamp-blue" aria-hidden="true"><span>REAL<b>STRATON</b>DASHBOARD</span></span></div>
+        <figcaption>$19,504.14 in one week</figcaption></figure></div>
       <div class="pola-wrap"><figure class="pola" style="--r:-2deg"><span class="tape" aria-hidden="true"></span>
         <img src="https://stratonmanagement.com/_next/image?url=%2Fimages%2Fresult-july-b.webp&amp;w=640&amp;q=75" srcset="https://stratonmanagement.com/_next/image?url=%2Fimages%2Fresult-july-b.webp&amp;w=384&amp;q=75 384w, https://stratonmanagement.com/_next/image?url=%2Fimages%2Fresult-july-b.webp&amp;w=640&amp;q=75 640w, https://stratonmanagement.com/_next/image?url=%2Fimages%2Fresult-july-b.webp&amp;w=828&amp;q=75 828w" sizes="(min-width:1024px) 300px, 72vw" alt="Two-day July 2026 earnings chart showing $7,088.00" width="1206" height="1029" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('noimg')"><div class="pola-fb" aria-hidden="true"><span class="fb-l">2 days in July 2026</span><b class="fb-a">$7,088.00</b><div class="fb-bars"><i style="height:30%"></i><i style="height:48%"></i><i style="height:62%"></i><i style="height:100%"></i><i style="height:84%"></i><i style="height:70%"></i><i style="height:91%"></i><i style="height:76%"></i><i style="height:58%"></i><i style="height:66%"></i></div></div>
-        <figcaption>$7,088.00 in July</figcaption></figure>
-        <span class="stamp-blue" aria-hidden="true"><span>REAL<b>STRATON</b>DASHBOARD</span></span></div>
+        <figcaption>$7,088.00 in July</figcaption></figure></div>
     </div>
     <p class="swipe">swipe for more →</p>
     <p class="note-sm">Real creator dashboards. Individual results vary and are not guaranteed.</p>
@@ -1024,9 +1013,9 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
 
   // 1) Message match per ad group: final URL ?ag=chatting or ?ag=us (default = management)
   var variants = {
-    management: {d:"Straton is a US OnlyFans management agency in Los Angeles: done-for-you marketing, 24/7 chatting by real people and daily account management.", t:"OnlyFans Management Agency in the USA | Straton", k:"Full OnlyFans management · Private by default", fit:11.75, h1:'<span class="l">The <span class="hand">Renowned'+swoosh+'</span> USA</span><span class="l">OnlyFans Management'+flag+'</span>', sub:"Doing everything yourself limits how far your page can go. Straton is a US OnlyFans management agency that takes over your marketing, 24/7 chatting by real people, PPV pricing and daily account work. You create. We grow the page. Your name stays private, and every decision stays yours."},
-    chatting: {d:"Straton is a 24/7 OnlyFans chatting agency. Trained chatters message your fans in your voice and handle PPV and follow-ups. You keep full control.", t:"OnlyFans Chatting Agency | 24/7 Real Chatters | Straton", k:"24/7 OnlyFans chatting · real people, never bots", fit:8.8, h1:'<span class="l">The <span class="hand">24/7'+swoosh+'</span> OnlyFans</span><span class="l">Chatting Agency'+flag+'</span>', sub:"Every unanswered DM is money left on the table. Our trained OnlyFans chatters reply in your voice day and night, sell PPV, follow up and handle custom requests, with daily quality checks. Your fans get answers, you get your time back, and you approve the strategy."},
-    us:       {d:"Straton is a US-based OnlyFans agency headquartered in Los Angeles: marketing, 24/7 fan chatting and daily account management. You keep control.", t:"US-Based OnlyFans Agency in Los Angeles | Straton", k:"Based in Los Angeles · Private by default", fit:9.15, h1:'<span class="l">The <span class="hand">US-Based'+swoosh+'</span></span><span class="l">OnlyFans Agency'+flag+'</span>', sub:"Want a real US company behind your page? Straton LLC is headquartered in Los Angeles and takes the whole job off your plate: marketing, 24/7 chatting by real people, PPV pricing and daily account work. You create. We grow the page. Your name stays private, and every decision stays yours."}
+    management: {d:"Straton is a US OnlyFans management agency in Los Angeles: done-for-you marketing, 24/7 chatting by real people and daily account management.", t:"OnlyFans Management Agency in the USA | Straton", k:"Full OnlyFans management · Private by default", fit:11.75, h1:'<span class="l">The <span class="hand">Renowned'+swoosh+'</span> USA</span><span class="l">OnlyFans Management'+flag+'</span>', sub:"Straton is a US OnlyFans management agency that takes over your marketing, 24/7 chatting by real people and daily account work. You create. Your name stays private."},
+    chatting: {d:"Straton is a 24/7 OnlyFans chatting agency. Trained chatters message your fans in your voice and handle PPV and follow-ups. You keep full control.", t:"OnlyFans Chatting Agency | 24/7 Real Chatters | Straton", k:"24/7 OnlyFans chatting · real people, never bots", fit:8.8, h1:'<span class="l">The <span class="hand">24/7'+swoosh+'</span> OnlyFans</span><span class="l">Chatting Agency'+flag+'</span>', sub:"Our trained OnlyFans chatters reply to your fans in your voice, 24/7. Real people, never bots. You get your time back and approve the strategy."},
+    us:       {d:"Straton is a US-based OnlyFans agency headquartered in Los Angeles: marketing, 24/7 fan chatting and daily account management. You keep control.", t:"US-Based OnlyFans Agency in Los Angeles | Straton", k:"Based in Los Angeles · Private by default", fit:9.15, h1:'<span class="l">The <span class="hand">US-Based'+swoosh+'</span></span><span class="l">OnlyFans Agency'+flag+'</span>', sub:"Straton LLC is a US OnlyFans agency based in Los Angeles: marketing, 24/7 chatting by real people and daily account management. Your name stays private."}
   };
   var v = variants[(q.get("ag")||"").toLowerCase()];
   if (v){
