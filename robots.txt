@@ -1,0 +1,3 @@
+# Google Ads landing page: crawlable by AdsBot, kept out of organic results by the page's noindex tag.
+User-agent: *
+Allow: /
