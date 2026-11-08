@@ -96,6 +96,7 @@ h2{font-size:30px;font-weight:800;letter-spacing:-.045em;line-height:1.05;text-w
 .vid-play:hover .vid-btn{transform:scale(1.05)}
 .vid-btn svg{width:24px;height:24px;margin-left:4px}
 @media(min-width:640px){.vid-time{top:16px;right:16px}.vid-btn{width:86px;height:86px}.vid-btn svg{width:28px;height:28px}}
+.vid-alt{margin-top:18px;font-size:15px;font-weight:700}.vid-alt a{color:var(--slate);text-underline-offset:4px}
 .ty-more{margin-top:32px;font-size:16px;color:var(--slate)}
 .ty-more a{font-weight:600;color:#2f84c9}
 footer{background:var(--ink);color:#fff;padding:56px 0 110px}
@@ -124,7 +125,7 @@ footer{padding-bottom:56px}
     <div class="ty-hero">
       <p class="ty-kick">you're in! 💙</p>
       <h1>Application <span class="hand">Received.<svg viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden="true"><path d="M3 7 C70 2,150 10,220 5 S290 6,297 4" fill="none" stroke="#A9DBFA" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></h1>
-      <p class="ty-sub">A real person from our team will reach out to you.</p>
+      <p class="ty-sub">You'll get a message from us in under a minute. Then a real person from our team will reach out to you.</p>
       <p class="ty-pill"><span aria-hidden="true">🔔</span> Keep your notifications on so you don't miss us</p>
       <div class="ty-actions">
         <a class="btn-tg" href="https://t.me/m/p5HEaFTRMzBh" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.5l-5-1.6c-1.1-.3-1.1-1.1.2-1.6L20.5 2.9c.9-.3 1.7.2 1.4 1.4Z"/></svg>Message Us on Telegram</a>
@@ -147,6 +148,7 @@ footer{padding-bottom:56px}
         </button>
       </div>
     </figure>
+    <p class="vid-alt"><a href="https://www.youtube.com/watch?v=5NPWkTip1P4" target="_blank" rel="noopener">Video not playing? Watch on YouTube ↗</a></p>
     <p class="ty-more">Want more? <a href="https://stratonmanagement.com/case-studies">See all success stories</a> or <a href="https://stratonmanagement.com/faq">read the FAQ</a>.</p>
   </div>
 </section>
@@ -177,7 +179,8 @@ footer{padding-bottom:56px}
 document.getElementById("yr").textContent=new Date().getFullYear();
 document.getElementById("vid-play").addEventListener("click",function(){
   var f=document.createElement("iframe");
-  f.src="https://www.youtube-nocookie.com/embed/5NPWkTip1P4?autoplay=1&rel=0&playsinline=1";
+  // Standard youtube.com player: the privacy-mode player is blocked by some browsers and shows "Video unavailable".
+  f.src="https://www.youtube.com/embed/5NPWkTip1P4?autoplay=1&rel=0&playsinline=1&origin="+encodeURIComponent(location.origin);
   f.title="How Our Model Made $73K in One Month (Full Breakdown)";
   f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";
   f.allowFullscreen=true;

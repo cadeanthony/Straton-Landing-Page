@@ -1,14 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18091139610"></script>
+<!-- Google tag (gtag.js). Commands are queued right away; the 160 KB script loads once the page
+     has finished loading, so it never slows the hero on phones. (thank-you.html loads it immediately,
+     because the lead conversion fires there.) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'AW-18091139610');
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18091139610';
+      document.head.appendChild(s);
+    }, 0);
+  });
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -435,6 +444,23 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
 
 .calc,.results,.services,.how,.faq,footer{content-visibility:auto;contain-intrinsic-size:auto 900px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;animation:none!important}}
+/* Case study video: click-to-play cover, YouTube only loads on press */
+.home-vid{margin:48px auto 0;max-width:860px}
+.home-vid h3{font-size:26px;line-height:1.1;letter-spacing:-.04em;font-weight:800;text-wrap:balance}
+@media(min-width:640px){.home-vid{margin-top:64px}.home-vid h3{font-size:34px}}
+.home-vid .sub{margin:10px auto 0;max-width:36rem;color:var(--slate)}
+.vid{position:relative;margin:28px auto 0;max-width:860px;transform:rotate(.6deg);background:#fff;padding:10px;box-shadow:0 18px 32px rgba(27,42,58,.18)}
+@media(min-width:640px){.vid{padding:14px}}
+.vid-box{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:6px;background:#213660}
+.vid-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid-play{position:absolute;inset:0;display:grid;place-items:center;width:100%;height:100%;border:0;cursor:pointer;background:linear-gradient(140deg,#24365f 0%,#3f6fae 50%,#86bdeb 100%)}
+.vid-play img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vid-time{position:absolute;top:12px;right:12px;border-radius:8px;background:rgba(14,26,48,.75);padding:4px 10px;font-size:13px;font-weight:600;color:#fff;font-variant-numeric:tabular-nums}
+.vid-btn{position:relative;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .15s}
+.vid-play:hover .vid-btn{transform:scale(1.05)}
+.vid-btn svg{width:24px;height:24px;margin-left:4px}
+@media(min-width:640px){.vid-time{top:16px;right:16px}.vid-btn{width:86px;height:86px}.vid-btn svg{width:28px;height:28px}}
+.vid-alt{margin-top:16px;font-size:15px;font-weight:700}.vid-alt a{color:var(--slate);text-underline-offset:4px}
 </style>
 
 <script type="application/ld+json">
@@ -694,13 +720,13 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
 
             <button class="btn btn-primary btn-block submit-btn" type="submit">Next</button>
             <p class="submit-err" role="alert" hidden></p>
-            <p class="form-foot"><span class="ff1">⏱️ 2 minutes · 🔒 Private application</span><span class="ff-sep"> · </span><span class="ff2">No contract, just a conversation</span></p>
+            <p class="form-foot"><span class="ff1">⏱️ 2 minutes · 🔒 Private application</span><span class="ff-sep"> · </span><span class="ff2">No lock-in contracts</span></p>
           </form>
 
           <div class="done-view" role="status" aria-live="polite">
             <p class="big">you're in!</p>
             <h3>Application received</h3>
-            <p>A real person on our team reads every application. We'll reach out the way you picked to set up your strategy call.</p>
+            <p>You'll get a message from us in under a minute. Then a real person on our team will reach out the way you picked to set up your strategy call.</p>
           </div>
         </div>
       </div>
@@ -811,6 +837,20 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
         <figcaption>$7,088.00 in July</figcaption></figure></div>
     </div>
     <p class="swipe">swipe for more →</p>
+    <div class="home-vid">
+      <h3>How Our Model Made <span class="hl">$73K<svg viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true"><path d="M4 26 C60 12,140 30,200 18 S290 22,296 14 L296 34 C230 38,150 30,90 36 S20 38,4 36Z" fill="#FFD84D" opacity="0.9"/></svg></span> in One Month</h3>
+      <p class="sub">Matvei walks through one model's $73K+ month from start to finish: where the money came from, what we changed and how the numbers added up.</p>
+      <figure class="vid">
+        <div class="vid-box">
+          <button type="button" class="vid-play" id="home-vid-play" aria-label="Play video: How Our Model Made $73K in One Month (Full Breakdown)">
+            <img src="https://i.ytimg.com/vi/5NPWkTip1P4/hqdefault.jpg" srcset="https://i.ytimg.com/vi/5NPWkTip1P4/hqdefault.jpg 480w, https://i.ytimg.com/vi/5NPWkTip1P4/maxresdefault.jpg 1280w" sizes="(min-width:900px) 860px, 100vw" alt="" width="1280" height="720" loading="lazy" decoding="async" onerror="this.remove()">
+            <span class="vid-time">11:40</span>
+            <span class="vid-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4 L20 12 L6 20 Z" fill="#E04848"/></svg></span>
+          </button>
+        </div>
+      </figure>
+      <p class="vid-alt"><a href="https://www.youtube.com/watch?v=5NPWkTip1P4" target="_blank" rel="noopener">Video not playing? Watch on YouTube ↗</a></p>
+    </div>
     <a class="btn btn-primary" href="#apply" data-cta="results">Apply to Start With Straton</a>
     <p class="cap" style="margin:56px 0 0"><span>and here's everything we handle</span><svg aria-hidden="true" style="transform:scaleX(-1)"><use href="#arrow-down"/></svg></p>
   </div>
@@ -951,13 +991,13 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
 
             <button class="btn btn-primary btn-block submit-btn" type="submit">Next</button>
             <p class="submit-err" role="alert" hidden></p>
-            <p class="form-foot"><span class="ff1">⏱️ 2 minutes · 🔒 Private application</span><span class="ff-sep"> · </span><span class="ff2">No contract, just a conversation</span></p>
+            <p class="form-foot"><span class="ff1">⏱️ 2 minutes · 🔒 Private application</span><span class="ff-sep"> · </span><span class="ff2">No lock-in contracts</span></p>
           </form>
 
           <div class="done-view" role="status" aria-live="polite">
             <p class="big">you're in!</p>
             <h3>Application received</h3>
-            <p>A real person on our team reads every application. We'll reach out the way you picked to set up your strategy call.</p>
+            <p>You'll get a message from us in under a minute. Then a real person on our team will reach out the way you picked to set up your strategy call.</p>
           </div>
         </div>
     </div>
@@ -973,6 +1013,8 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
     </div>
     <div class="faq-list">
       <details><summary>What's the agency split?<svg aria-hidden="true"><use href="#plus"/></svg></summary><p>It depends on what you need, and it's always agreed in writing before you sign. <b>Chatting only:</b> we take 25% if you make under $50K a month, and 20% once you're over $50K a month. <b>Full management</b> (marketing, chatting and daily account management): a 50/50 split.</p></details>
+      <details><summary>Is there a lock-in contract?<svg aria-hidden="true"><use href="#plus"/></svg></summary><p>No. Straton has no term contracts, so you can leave whenever you want. All we ask is that you tell us.</p></details>
+      <details><summary>What happens after I apply?<svg aria-hidden="true"><use href="#plus"/></svg></summary><p>You get a message from us in under a minute, and a real person on our team follows up. Our team answers around the clock. If it looks like a fit, we set up a strategy call about your page and your goals.</p></details>
       <details><summary>How do I get paid?<svg aria-hidden="true"><use href="#plus"/></svg></summary><p>You earn from subscriptions, tips, pay-per-view content and paid messages. Payouts go from OnlyFans straight to your own bank account. Your account and your payouts stay in your name.</p></details>
       <details><summary>What's in it for me?<svg aria-hidden="true"><use href="#plus"/></svg></summary><p>More earning potential with less of your time. We bring in new fans, answer every message 24/7 and price your content by what fans actually buy, while you focus on creating. On the strategy call we show you where we think your page can grow.</p></details>
       <details><summary>Can I do this privately?<svg aria-hidden="true"><use href="#plus"/></svg></summary><p>Yes. Geo-blocking hides your page from your home state, our DMCA takedown service gets leaked content pulled down, only our team sees your application, and nothing posts without your OK. You decide what you show.</p></details>
@@ -1270,6 +1312,17 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
   })();
   document.getElementById("yr").textContent = new Date().getFullYear();
 })();
+</script>
+<script>
+// Case study video: swap the cover for YouTube's player only when someone presses play.
+document.getElementById("home-vid-play").addEventListener("click",function(){
+  var f=document.createElement("iframe");
+  f.src="https://www.youtube.com/embed/5NPWkTip1P4?autoplay=1&rel=0&playsinline=1&origin="+encodeURIComponent(location.origin);
+  f.title="How Our Model Made $73K in One Month (Full Breakdown)";
+  f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";
+  f.allowFullscreen=true;
+  this.replaceWith(f);
+});
 </script>
 </body>
 </html>
