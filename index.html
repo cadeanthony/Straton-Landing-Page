@@ -219,6 +219,7 @@ fieldset{border:0}
 .err{display:none;margin-top:6px;font-size:13px;font-weight:600;color:var(--red)}
 .invalid .err{display:block}
 .invalid .inp,.invalid .phone,.invalid .chip{border-color:var(--red)}
+.err-fix{appearance:none;border:0;background:none;padding:0;margin:0;font:inherit;color:var(--primary);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .step2,.done-view{display:none}
 .form-card.on2 .step1{display:none}.form-card.on2 .step2{display:block}.form-card.on2 .progress i{width:100%}
 .form-card.done form,.form-card.done .step-label,.form-card.done .progress{display:none}.form-card.done .done-view{display:block}
@@ -689,16 +690,16 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
             <!-- STEP 1 -->
             <div class="fields step1">
               <div class="fg"><label class="f-label" for="f-name">Full Name<span class="req"> *</span></label>
-                <input class="inp" id="f-name" name="name" autocomplete="name" required><p class="err">Please enter your name.</p></div>
+                <input class="inp" id="f-name" name="name" autocomplete="name" maxlength="80" required><p class="err">Please enter your name.</p></div>
               <div class="fg"><label class="f-label" for="f-phone">Phone number<span class="req"> *</span></label>
                 <div class="phone"><select name="country_code" aria-label="Country code">
                   <option value="+1 US">🇺🇸 +1</option><option value="+1 CA">🇨🇦 +1</option><option value="+44">🇬🇧 +44</option><option value="+61">🇦🇺 +61</option><option value="+64">🇳🇿 +64</option><option value="+353">🇮🇪 +353</option><option value="+49">🇩🇪 +49</option><option value="+33">🇫🇷 +33</option><option value="+34">🇪🇸 +34</option><option value="+39">🇮🇹 +39</option><option value="+31">🇳🇱 +31</option><option value="+46">🇸🇪 +46</option><option value="+55">🇧🇷 +55</option><option value="+52">🇲🇽 +52</option></select>
-                  <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" required></div>
+                  <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="20" required></div>
                 <p class="err">Please enter a valid phone number.</p></div>
               <div class="fg"><label class="f-label" for="f-email">Email<span class="req"> *</span></label>
-                <input class="inp" id="f-email" name="email" type="email" inputmode="email" autocomplete="email" required><p class="err">Please enter a valid email.</p></div>
+                <input class="inp" id="f-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" required><p class="err">Please enter a valid email.</p></div>
               <div class="fg"><label class="f-label" for="f-ig">Instagram<span class="req"> *</span></label>
-                <input class="inp" id="f-ig" name="instagram" placeholder="@username" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Instagram.</p></div>
+                <input class="inp" id="f-ig" name="instagram" placeholder="@username" maxlength="100" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Instagram.</p></div>
               <fieldset class="fg"><legend>Best way to reach you <span class="req">*</span></legend>
                 <div class="chips">
                   <label class="chip"><input type="radio" name="contact_method" value="Text Message (US Only)" required>Text (US)</label>
@@ -707,7 +708,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
                   <label class="chip"><input type="radio" name="contact_method" value="Telegram">Telegram</label>
                 </div><p class="err">Please pick one.</p></fieldset>
               <div class="fg tg-field" hidden><label class="f-label" for="f-tg">Telegram username<span class="req"> *</span></label>
-                <input class="inp" id="f-tg" name="telegram" placeholder="@username" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Telegram username.</p></div>
+                <input class="inp" id="f-tg" name="telegram" placeholder="@username" maxlength="100" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Telegram username.</p></div>
               <div class="fg"><label class="agree"><input type="checkbox" name="consent" required><span>I'm 18+ and agree to be contacted about my application and to the <a href="https://stratonmanagement.com/privacy">Privacy Policy</a>.</span></label><p class="err">Please confirm to continue.</p></div>
             </div>
 
@@ -977,16 +978,16 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
             <!-- STEP 1 -->
             <div class="fields step1">
               <div class="fg"><label class="f-label" for="f-name-b">Full Name<span class="req"> *</span></label>
-                <input class="inp" id="f-name-b" name="name" autocomplete="name" required><p class="err">Please enter your name.</p></div>
+                <input class="inp" id="f-name-b" name="name" autocomplete="name" maxlength="80" required><p class="err">Please enter your name.</p></div>
               <div class="fg"><label class="f-label" for="f-phone-b">Phone number<span class="req"> *</span></label>
                 <div class="phone"><select name="country_code" aria-label="Country code">
                   <option value="+1 US">🇺🇸 +1</option><option value="+1 CA">🇨🇦 +1</option><option value="+44">🇬🇧 +44</option><option value="+61">🇦🇺 +61</option><option value="+64">🇳🇿 +64</option><option value="+353">🇮🇪 +353</option><option value="+49">🇩🇪 +49</option><option value="+33">🇫🇷 +33</option><option value="+34">🇪🇸 +34</option><option value="+39">🇮🇹 +39</option><option value="+31">🇳🇱 +31</option><option value="+46">🇸🇪 +46</option><option value="+55">🇧🇷 +55</option><option value="+52">🇲🇽 +52</option></select>
-                  <input id="f-phone-b" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" required></div>
+                  <input id="f-phone-b" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="20" required></div>
                 <p class="err">Please enter a valid phone number.</p></div>
               <div class="fg"><label class="f-label" for="f-email-b">Email<span class="req"> *</span></label>
-                <input class="inp" id="f-email-b" name="email" type="email" inputmode="email" autocomplete="email" required><p class="err">Please enter a valid email.</p></div>
+                <input class="inp" id="f-email-b" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" required><p class="err">Please enter a valid email.</p></div>
               <div class="fg"><label class="f-label" for="f-ig-b">Instagram<span class="req"> *</span></label>
-                <input class="inp" id="f-ig-b" name="instagram" placeholder="@username" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Instagram.</p></div>
+                <input class="inp" id="f-ig-b" name="instagram" placeholder="@username" maxlength="100" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Instagram.</p></div>
               <fieldset class="fg"><legend>Best way to reach you <span class="req">*</span></legend>
                 <div class="chips">
                   <label class="chip"><input type="radio" name="contact_method" value="Text Message (US Only)" required>Text (US)</label>
@@ -995,7 +996,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
                   <label class="chip"><input type="radio" name="contact_method" value="Telegram">Telegram</label>
                 </div><p class="err">Please pick one.</p></fieldset>
               <div class="fg tg-field" hidden><label class="f-label" for="f-tg-b">Telegram username<span class="req"> *</span></label>
-                <input class="inp" id="f-tg-b" name="telegram" placeholder="@username" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Telegram username.</p></div>
+                <input class="inp" id="f-tg-b" name="telegram" placeholder="@username" maxlength="100" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Telegram username.</p></div>
               <div class="fg"><label class="agree"><input type="checkbox" name="consent" required><span>I'm 18+ and agree to be contacted about my application and to the <a href="https://stratonmanagement.com/privacy">Privacy Policy</a>.</span></label><p class="err">Please confirm to continue.</p></div>
             </div>
 
@@ -1128,18 +1129,106 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
   var TURNSTILE_SITE_KEY = "0x4AAAAAAF3CfoGdJfZ0943p"; // Cloudflare Turnstile site key (public)
   var submitted = false;
 
-  function validGroup(fg){
-    var ok = true, inputs = fg.querySelectorAll("input,select");
-    var radios = fg.querySelectorAll('input[type=radio][required]');
-    if (radios.length){ ok = !!fg.querySelector("input[type=radio]:checked"); }
-    else inputs.forEach(function(i){
-      if (!i.required) return;
-      if (i.type==="checkbox") ok = ok && i.checked;
-      else if (i.type==="tel") ok = ok && i.value.replace(/\D/g,"").length >= 7;
-      else ok = ok && i.checkValidity() && i.value.trim()!=="";
+  // ---- Field rules: each returns "" when the value is OK, or the message shown under the field ----
+  // National number lengths (after the country code, without a leading 0) for the countries in the picker
+  var PHONE_LEN = {"+1":[10,10],"+44":[9,10],"+61":[9,9],"+64":[8,10],"+353":[7,9],"+49":[7,11],"+33":[9,9],"+34":[9,9],"+39":[6,11],"+31":[9,9],"+46":[7,9],"+55":[10,11],"+52":[10,10]};
+  var EMAIL_FIX = {"gmial.com":"gmail.com","gmai.com":"gmail.com","gmal.com":"gmail.com","gamil.com":"gmail.com","gnail.com":"gmail.com","gmail.co":"gmail.com","gmail.con":"gmail.com","gmail.cm":"gmail.com","gmail.om":"gmail.com",
+    "hotmial.com":"hotmail.com","hotmai.com":"hotmail.com","hotmail.co":"hotmail.com","hotmail.con":"hotmail.com","yaho.com":"yahoo.com","yahooo.com":"yahoo.com","yahoo.co":"yahoo.com","yahoo.con":"yahoo.com",
+    "iclod.com":"icloud.com","icould.com":"icloud.com","icloud.co":"icloud.com","icloud.con":"icloud.com","outlok.com":"outlook.com","outlook.co":"outlook.com","outlook.con":"outlook.com"};
+  function igHandle(v){ return String(v||"").trim().replace(/^(https?:\/\/)?(www\.)?(instagram\.com|instagr\.am)\//i,"").replace(/[/?#].*$/,"").replace(/^@+/,""); }
+  function tgHandle(v){ return String(v||"").trim().replace(/^(https?:\/\/)?(t\.me|telegram\.me)\//i,"").replace(/[/?#].*$/,"").replace(/^@+/,""); }
+  function phoneParts(form){
+    var cc=(form.elements.country_code.value.split(" ")[0]||"+1"), d=form.elements.phone.value.replace(/\D/g,"");
+    if (cc==="+1" && d.length===11 && d.charAt(0)==="1") d=d.slice(1);
+    if (cc!=="+1") d=d.replace(/^0+/,"");
+    return {cc:cc, d:d};
+  }
+  var NAME_RE = /^[\p{L}\p{M}][\p{L}\p{M}'’.-]*(?: [\p{L}\p{M}][\p{L}\p{M}'’.-]*)+$/u;
+  var RULES = {
+    name: function(v){
+      v=v.trim().replace(/\s+/g," ");
+      if (!v) return "Please enter your full name.";
+      if (/[0-9@_#$%^&*()+=<>{}\[\]\\\/|~`!?:;"]/.test(v) || /https?:|www\./i.test(v)) return "Please use letters only.";
+      if (v.indexOf(" ")<0) return "Please enter your first and last name.";
+      if (!NAME_RE.test(v) || v.length>80) return "Please enter a real first and last name.";
+      return "";
+    },
+    phone: function(v, form){
+      var p=phoneParts(form), r=PHONE_LEN[p.cc]||[7,15];
+      if (!p.d) return "Please enter your phone number.";
+      if (/[^\d\s().+-]/.test(v)) return "Please use numbers only.";
+      if (p.d.length<r[0] || p.d.length>r[1]) return p.cc==="+1" ? "Please enter a 10-digit number." : (r[0]===r[1] ? "Please enter "+r[0]+" digits for this country." : "Please enter "+r[0]+"–"+r[1]+" digits for this country.");
+      if (/^(\d)\1+$/.test(p.d) || "0123456789012345".indexOf(p.d)>-1 || "9876543210987654".indexOf(p.d)>-1) return "Please enter a real phone number.";
+      if (p.cc==="+1" && !/^[2-9]\d{2}[2-9]\d{6}$/.test(p.d)) return "Please enter a valid US or Canadian number.";
+      return "";
+    },
+    email: function(v){
+      v=v.trim();
+      if (!v) return "Please enter your email.";
+      var m=/^[A-Za-z0-9.!#$%&'*+\/=?^_`{|}~-]+@((?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,24})$/.exec(v);
+      if (!m || /^\.|\.\.|\.@/.test(v) || v.length>254) return "Please enter a valid email, like name@gmail.com.";
+      var fix=EMAIL_FIX[m[1].toLowerCase()];
+      if (fix) return {msg:"Did you mean ", fix:v.split("@")[0]+"@"+fix};
+      return "";
+    },
+    instagram: function(v){
+      var h=igHandle(v);
+      if (!h) return "Please enter your Instagram username, like @username.";
+      if (!/^[A-Za-z0-9._]{1,30}$/.test(h) || /^\.|\.$|\.\./.test(h)) return "Use only letters, numbers, periods or underscores (max 30), like @username.";
+      return "";
+    },
+    telegram: function(v){
+      var h=tgHandle(v);
+      if (!h) return "Please enter your Telegram username, like @username.";
+      if (!/^[A-Za-z][A-Za-z0-9_]{3,31}$/.test(h) || /_$/.test(h)) return "Telegram usernames are 5–32 letters, numbers or underscores and start with a letter.";
+      return "";
+    },
+    contact_method: function(v, form){
+      if (!v) return "Please pick how we should reach you.";
+      if (v==="Text Message (US Only)" && form.elements.country_code.value!=="+1 US") return "Text is for US numbers. Please pick WhatsApp, Instagram DM or Telegram.";
+      return "";
+    },
+    consent: function(v){ return v ? "" : "Please confirm you're 18+ and agree to be contacted."; },
+    monthly_revenue: function(v){ return v ? "" : "Please pick your current monthly revenue."; },
+    current_setup: function(v){ return v ? "" : "Please pick what best describes your setup."; }
+  };
+  var NORMALIZE = {
+    name: function(v){ return v.trim().replace(/\s+/g," "); },
+    email: function(v){ return v.trim(); },
+    instagram: function(v){ var h=igHandle(v); return h ? "@"+h : v.trim(); },  // always stored as @username
+    telegram: function(v){ var h=tgHandle(v); return h ? "@"+h : v.trim(); }
+  };
+  var errSeq = 0;
+
+  // Check one field group; tidy = also clean up the value (on leaving the field or pressing Next)
+  function validGroup(fg, tidy){
+    var form = fg.closest("form"),
+        el = fg.querySelector('input[type=radio],input[type=checkbox],input[type=tel],input.inp');
+    if (!el) return true;
+    var name = el.name, val;
+    if (el.type==="radio"){ var c=fg.querySelector("input[type=radio]:checked"); val=c?c.value:""; }
+    else if (el.type==="checkbox") val = el.checked;
+    else {
+      if (tidy && NORMALIZE[name]){ var n=NORMALIZE[name](el.value); if (n!==el.value){ el.value=n; syncFrom(form, el); } }
+      val = el.value;
+    }
+    var rule = RULES[name], res = rule ? rule(val, form) : (String(val).trim() ? "" : "This field is required.");
+    var bad = !!res, err = fg.querySelector(".err");
+    fg.classList.toggle("invalid", bad);
+    [].forEach.call(fg.querySelectorAll("input:not([type=hidden]),select"), function(i){
+      if (bad) i.setAttribute("aria-invalid","true"); else i.removeAttribute("aria-invalid");
     });
-    fg.classList.toggle("invalid", !ok);
-    return ok;
+    if (err){
+      if (!err.id){ err.id = "err-"+(++errSeq); el.setAttribute("aria-describedby", err.id); }
+      if (bad && typeof res==="object"){
+        err.textContent = res.msg;
+        var fixBtn = document.createElement("button");
+        fixBtn.type = "button"; fixBtn.className = "err-fix"; fixBtn.textContent = res.fix;
+        fixBtn.addEventListener("click", function(){ el.value = res.fix; syncFrom(form, el); validGroup(fg); el.focus(); });
+        err.appendChild(fixBtn); err.appendChild(document.createTextNode("?"));
+      } else if (bad) err.textContent = res;
+    }
+    return !bad;
   }
 
   function syncFrom(src, el){
@@ -1223,7 +1312,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
         back = card.querySelector(".back-btn"), step = 1;
     function validStep(n){
       var groups = [].filter.call(card.querySelectorAll(".step"+n+" .fg"), function(g){ return !g.hidden; }), ok = true, first = null;
-      groups.forEach(function(g){ if(!validGroup(g)){ ok=false; if(!first) first=g; } });
+      groups.forEach(function(g){ if(!validGroup(g, true)){ ok=false; if(!first) first=g; } });
       if (first){ var el = first.querySelector("input:not([type=hidden]),select"); el && el.focus({preventScroll:true}); first.scrollIntoView({block:"center",behavior:"smooth"}); }
       return ok;
     }
@@ -1231,9 +1320,16 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
       var g=e.target.closest(".fg"); if(g&&g.classList.contains("invalid")) validGroup(g);
       syncFrom(form, e.target);
       if (e.target.name==="contact_method") updateTelegram();
+      if (e.target.name==="country_code"){ var cm=card.querySelector('input[name="contact_method"]:checked'); if (cm) validGroup(cm.closest(".fg")); }
     }
     card.addEventListener("input", onEdit);
     card.addEventListener("change", onEdit);
+    card.addEventListener("focusout", function(e){
+      var t=e.target, g=t.closest && t.closest(".fg");
+      if (!g || t.type==="radio" || t.type==="checkbox") return;
+      if (t.tagName==="SELECT"){ var ph=card.querySelector('input[name="phone"]'); if (ph && ph.value) validGroup(ph.closest(".fg")); var cm=card.querySelector('input[name="contact_method"]:checked'); if (cm) validGroup(cm.closest(".fg")); return; }
+      if (t.value.trim()) validGroup(g, true);
+    });
     function go(n){
       step = n; card.classList.toggle("on2", n===2);
       stepTxt.textContent = n===1 ? "Step 1 of 2 · Contact" : "Step 2 of 2 · Your page";
