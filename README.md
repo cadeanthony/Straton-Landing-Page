@@ -7,6 +7,7 @@ Live at **https://agency.stratonmanagement.com** (Vercel, static, no build step)
   - `usa.html` → `/usa` (us / american / usa agency keywords)
   - `los-angeles.html` → `/los-angeles` (LA keywords)
   - `management.html` → `/management` (manager / management agency / company / private)
+  - `chatting.html` → `/chatting` (chatting-only offer: 25% / 20% of message + tip revenue; built by `build_chatting.py`)
 - `thank-you.html`: after a completed application. Its Google tag only loads when the visitor
   arrives from a submitted form, so the Google Ads conversion never counts refreshes or direct visits.
 - `api/apply.js`: checks the CAPTCHA, then forwards the lead to Zapier → GHL.
