@@ -464,10 +464,23 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
 @media(min-width:640px){.vid-time{top:16px;right:16px}.vid-btn{width:86px;height:86px}.vid-btn svg{width:28px;height:28px}}
 .vid-alt{margin-top:16px;font-size:15px;font-weight:700}.vid-alt a{color:var(--slate);text-underline-offset:4px}
 
+/* Chatting hero: no form up top (visitors are still discovering); the one form is at the bottom */
+.hero .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.hero .hero-actions .btn{flex:1 1 auto}
+@media(min-width:640px){.hero .hero-actions .btn{flex:0 0 auto}}
+.hero .side-cap{display:none}
+.inbox-proof{margin:0 auto;max-width:400px;transform:rotate(1.2deg)}
+.inbox-frame{background:#d0e5f4;border-radius:30px;padding:12px;box-shadow:0 24px 50px -22px rgba(20,44,59,.35);max-height:520px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}
+@media(min-width:1024px){.inbox-frame{max-height:min(600px,74vh)}}
+.inbox-frame img{display:block;width:100%;height:auto;border-radius:20px}
+.inbox-proof figcaption{margin-top:6px;text-align:center;font-family:var(--handf);font-weight:700;font-size:22px;line-height:1.1;color:var(--caption);transform:rotate(-1.2deg)}
+
 /* ---------- Chatting page ---------- */
-.trust-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;list-style:none;padding:0}
-.trust-row li{display:inline-flex;align-items:center;gap:6px;background:#fff;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;color:var(--ink);box-shadow:0 6px 16px -10px rgba(20,44,59,.35)}
+.trust-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;list-style:none;padding:0}
+.trust-row li{display:inline-flex;align-items:center;gap:5px;background:#fff;border-radius:999px;padding:6px 10px;font-size:12.5px;font-weight:600;color:var(--ink);box-shadow:0 6px 16px -10px rgba(20,44,59,.35)}
 .trust-row li::before{content:"✓";color:var(--primary);font-weight:800}
+@media(max-width:639px){.trust-row{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px}.trust-row li{background:none;box-shadow:none;padding:0;font-size:13.5px;align-items:flex-start}}
 .who{padding:8px 0 56px}
 .who-head{max-width:44rem}
 .who-head p,.sec-sub{margin-top:12px;font-size:16px;line-height:1.6;color:var(--slate);max-width:44rem}
@@ -711,81 +724,14 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
         <h1 id="kw-h1" style="--fit:10.3"><span class="l">The OnlyFans</span> <span class="l">Chatting Agency Built</span> <span class="l">for <span class="hand">More<svg viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden="true"><path d="M3 7 C70 2,150 10,220 5 S290 6,297 4" fill="none" stroke="#A9DBFA" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span> Fan Revenue</span></h1>
         <p class="lead" id="kw-sub">Get trained chatters, 24/7 coverage, and daily quality control for your fan messaging, PPV sales, follow ups, and custom requests.</p>
         <ul class="trust-row"><li>USA &amp; EU-Based Staff</li><li>24/7 OF Chat Management</li><li>Fully Discreet &amp; Secure</li><li>Fan Messaging &amp; PPV</li></ul>
-        <div class="hero-actions"><a class="btn btn-ghost" href="#how-it-works" data-cta="hero-how">See How It Works<svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><p class="side-cap" aria-hidden="true"><span>apply here. takes 2 minutes</span><svg><use href="#arrow-right"/></svg></p></div>
+        <div class="hero-actions"><a class="btn btn-primary" href="#apply" data-cta="hero-apply">Get Your Chatting Team</a><a class="btn btn-ghost" href="#how-it-works" data-cta="hero-how">See How It Works<svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><p class="side-cap" aria-hidden="true"><span>apply here. takes 2 minutes</span><svg><use href="#arrow-right"/></svg></p></div>
       </div>
 
-      <div>
-        <p class="form-cap"><svg aria-hidden="true"><use href="#arrow-down"/></svg><span>apply here. takes 2 minutes</span></p>
-        <div class="form-card" id="apply">
-          <div class="step-label"><span class="step-txt">Step 1 of 2 · Contact</span><button type="button" class="back-btn" hidden>← Back</button></div>
-          <div class="progress" aria-hidden="true"><i></i></div>
-
-          <form class="apply-form" id="applyForm" novalidate>
-            <div class="hp" aria-hidden="true"><label>Company website<input name="company_website" tabindex="-1" autocomplete="off"></label></div>
-
-            <!-- STEP 1 -->
-            <div class="fields step1">
-              <div class="fg"><label class="f-label" for="f-name">Full Name<span class="req"> *</span></label>
-                <input class="inp" id="f-name" name="name" autocomplete="name" maxlength="80" required><p class="err">Please enter your name.</p></div>
-              <div class="fg"><label class="f-label" for="f-phone">Phone number<span class="req"> *</span></label>
-                <div class="phone"><select name="country_code" aria-label="Country code">
-                  <option value="+1 US">🇺🇸 +1</option><option value="+1 CA">🇨🇦 +1</option><option value="+44">🇬🇧 +44</option><option value="+61">🇦🇺 +61</option><option value="+64">🇳🇿 +64</option><option value="+353">🇮🇪 +353</option><option value="+49">🇩🇪 +49</option><option value="+33">🇫🇷 +33</option><option value="+34">🇪🇸 +34</option><option value="+39">🇮🇹 +39</option><option value="+31">🇳🇱 +31</option><option value="+46">🇸🇪 +46</option><option value="+55">🇧🇷 +55</option><option value="+52">🇲🇽 +52</option></select>
-                  <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="20" required></div>
-                <p class="err">Please enter a valid phone number.</p></div>
-              <div class="fg"><label class="f-label" for="f-email">Email<span class="req"> *</span></label>
-                <input class="inp" id="f-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" required><p class="err">Please enter a valid email.</p></div>
-              <div class="fg"><label class="f-label" for="f-ig">Instagram<span class="req"> *</span></label>
-                <input class="inp" id="f-ig" name="instagram" placeholder="@username" maxlength="100" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Instagram.</p></div>
-              <fieldset class="fg"><legend>Best way to reach you <span class="req">*</span></legend>
-                <div class="chips">
-                  <label class="chip"><input type="radio" name="contact_method" value="Text Message (US Only)" required>Text (US)</label>
-                  <label class="chip"><input type="radio" name="contact_method" value="WhatsApp (Outside U.S.)">WhatsApp</label>
-                  <label class="chip"><input type="radio" name="contact_method" value="Instagram DM">Instagram DM</label>
-                  <label class="chip"><input type="radio" name="contact_method" value="Telegram">Telegram</label>
-                </div><p class="err">Please pick one.</p></fieldset>
-              <div class="fg tg-field" hidden><label class="f-label" for="f-tg">Telegram username<span class="req"> *</span></label>
-                <input class="inp" id="f-tg" name="telegram" placeholder="@username" maxlength="100" autocomplete="off" autocapitalize="none" spellcheck="false" required><p class="err">Please enter your Telegram username.</p></div>
-              <div class="fg"><label class="agree"><input type="checkbox" name="consent" required><span>I'm 18+ and agree to be contacted about my application and to the <a href="https://stratonmanagement.com/privacy">Privacy Policy</a>.</span></label><p class="err">Please confirm to continue.</p></div>
-            </div>
-
-            <!-- STEP 2 -->
-            <div class="fields step2">
-              <fieldset class="fg"><legend>Current monthly creator revenue <span class="req">*</span></legend>
-                <div class="chips">
-                  <label class="chip"><input type="radio" name="monthly_revenue" value="$0" required>$0</label>
-                  <label class="chip"><input type="radio" name="monthly_revenue" value="$2.5k - $5k/month">$2.5k - $5k/month</label>
-                  <label class="chip"><input type="radio" name="monthly_revenue" value="$5k - $10k/month">$5k - $10k/month</label>
-                  <label class="chip"><input type="radio" name="monthly_revenue" value="$10k - $25k/month">$10k - $25k/month</label>
-                  <label class="chip"><input type="radio" name="monthly_revenue" value="$25K–$50K/month">$25K–$50K/month</label>
-                  <label class="chip"><input type="radio" name="monthly_revenue" value="$50K–$100K/month">$50K–$100K/month</label>
-                  <label class="chip"><input type="radio" name="monthly_revenue" value="$100K+/month">$100K+/month</label>
-                </div><p class="err">Please pick one.</p></fieldset>
-              <fieldset class="fg"><legend>What best describes your current setup? <span class="req">*</span></legend>
-                <div class="chips">
-                  <label class="chip"><input type="radio" name="current_setup" value="Just starting out" required>Just starting out</label>
-                  <label class="chip"><input type="radio" name="current_setup" value="Doing it all myself">Doing it all myself</label>
-                  <label class="chip"><input type="radio" name="current_setup" value="Have a chatter or assistant">Have a chatter or assistant</label>
-                  <label class="chip"><input type="radio" name="current_setup" value="Currently with an agency">Currently with an agency</label>
-                </div><p class="err">Please pick one.</p></fieldset>
-              <div class="ts-slot" aria-live="polite"></div>
-            </div>
-
-            <!-- Attribution: filled from the ad click URL -->
-            <input type="hidden" name="gclid"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium">
-            <input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content">
-            <input type="hidden" name="landing_page"><input type="hidden" name="est_monthly"><input type="hidden" name="started_at"><input type="hidden" name="form_location" value="top">
-
-            <button class="btn btn-primary btn-block submit-btn" type="submit">Next</button>
-            <p class="submit-err" role="alert" hidden></p>
-            <p class="form-foot"><span class="ff1">⏱️ 2 minutes · 🔒 Private application</span><span class="ff-sep"> · </span><span class="ff2">No lock-in contracts</span></p>
-          </form>
-
-          <div class="done-view" role="status" aria-live="polite">
-            <p class="big">you're in!</p>
-            <h3>Application received</h3>
-            <p>You'll get a message from us in under a minute. Then a real person on our team will reach out the way you picked to set up your strategy call.</p>
-          </div>
-        </div>
+      <div class="hero-proof">
+        <figure class="inbox-proof">
+          <div class="inbox-frame"><img src="/img/chat-inbox-828.webp" srcset="/img/chat-inbox-414.webp 414w, /img/chat-inbox-828.webp 828w" sizes="(min-width:1024px) 400px, calc(100vw - 72px)" width="828" height="1476" alt="An OnlyFans inbox run by Straton chatters: fans sending tips and messages, with each fan's total spend shown. Fan names are blurred." fetchpriority="high" decoding="async"></div>
+          <figcaption>real fans. real tips. names blurred.</figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -933,7 +879,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
       <p class="final-sub">Our team personally reviews each submission to determine whether your account is a good fit for Straton’s chatting service.</p>
     </div>
     <div class="final-form">
-      <div class="form-card" id="apply-b">
+      <div class="form-card" id="apply">
           <div class="step-label"><span class="step-txt">Step 1 of 2 · Contact</span><button type="button" class="back-btn" hidden>← Back</button></div>
           <div class="progress" aria-hidden="true"><i></i></div>
 
@@ -1357,7 +1303,7 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
   // Apply buttons scroll to whichever form is closer
   document.querySelectorAll('a[href="#apply"]').forEach(function(a){
     a.addEventListener("click", function(e){
-      if (cards.length < 2) return;
+      if (cards.length < 2){ e.preventDefault(); goTo(cards[0]); return; }
       var mid = scrollY + innerHeight/2, best = cards[0], bd = Infinity;
       cards.forEach(function(c){ var r=c.getBoundingClientRect(), d=Math.abs(r.top+scrollY+r.height/2-mid); if(d<bd){bd=d;best=c;} });
       e.preventDefault(); goTo(best);
@@ -1368,9 +1314,10 @@ footer ul a{text-decoration:none;display:inline-block;padding:6px 0}footer ul a:
   var m = document.getElementById("mcta");
   if ("IntersectionObserver" in window){
     var formSeen=false, vis=cards.map(function(){return false}), footVis=false;
+    new IntersectionObserver(function(es){ if(!es[0].isIntersecting && es[0].boundingClientRect.top<0){ formSeen=true; upd(); } }).observe(document.querySelector('.hero'));
     var upd=function(){ m.classList.toggle("show", formSeen && vis.indexOf(true)<0 && !footVis && !submitted); };
     cards.forEach(function(c,i){
-      new IntersectionObserver(function(es){ vis[i]=es[0].isIntersecting; if(i===0 && !vis[0] && es[0].boundingClientRect.top<0) formSeen=true; upd(); }).observe(c);
+      new IntersectionObserver(function(es){ vis[i]=es[0].isIntersecting; upd(); }).observe(c);
     });
     new IntersectionObserver(function(es){ footVis=es[0].isIntersecting; upd(); }).observe(document.querySelector("footer"));
     document.addEventListener("click", function(){ setTimeout(upd,0); });
